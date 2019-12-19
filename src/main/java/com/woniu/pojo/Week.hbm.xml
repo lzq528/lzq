@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-12-19 19:49:17 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.woniu.pojo.Week" table="week" catalog="sms" optimistic-lock="version">
+        <id name="wid" type="java.lang.Integer">
+            <column name="wid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="clazz" class="com.woniu.pojo.Clazz" fetch="select">
+            <column name="cid" />
+        </many-to-one>
+        <many-to-one name="student" class="com.woniu.pojo.Student" fetch="select">
+            <column name="sid" not-null="true" />
+        </many-to-one>
+        <property name="wscore" type="float">
+            <column name="wscore" precision="12" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-12-19 19:49:17 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.woniu.pojo.Attendance" table="attendance" catalog="sms" optimistic-lock="version">
+        <id name="aid" type="java.lang.Integer">
+            <column name="aid" />
+            <generator class="identity" />
+        </id>
+        <property name="astatus" type="string">
+            <column name="astatus" length="20" not-null="true" />
+        </property>
+        <set name="students" table="student" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="aid" not-null="true" />
+            </key>
+            <one-to-many class="com.woniu.pojo.Student" />
+        </set>
+        <set name="clazzs" table="clazz" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="aid" not-null="true" />
+            </key>
+            <one-to-many class="com.woniu.pojo.Clazz" />
+        </set>
+    </class>
+</hibernate-mapping>

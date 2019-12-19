@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-12-19 19:49:17 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.woniu.pojo.Clazz" table="clazz" catalog="sms" optimistic-lock="version">
+        <id name="cid" type="java.lang.Integer">
+            <column name="cid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="attendance" class="com.woniu.pojo.Attendance" fetch="select">
+            <column name="aid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="com.woniu.pojo.User" fetch="select">
+            <column name="uid" />
+        </many-to-one>
+        <property name="cname" type="string">
+            <column name="cname" length="20" not-null="true" />
+        </property>
+        <set name="students" table="student" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cid" not-null="true" />
+            </key>
+            <one-to-many class="com.woniu.pojo.Student" />
+        </set>
+        <set name="weeks" table="week" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cid" />
+            </key>
+            <one-to-many class="com.woniu.pojo.Week" />
+        </set>
+        <set name="phases" table="phase" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cid" />
+            </key>
+            <one-to-many class="com.woniu.pojo.Phase" />
+        </set>
+    </class>
+</hibernate-mapping>
