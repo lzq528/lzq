@@ -36,8 +36,9 @@ public class UserDAOImpl implements IUserDAO {
 	@Override
 	public List<User> findAll() {
 		System.out.println("进来了dao层");
-		return sessionFactory.getCurrentSession().createQuery("from User").list();
-		 
+		List users = sessionFactory.getCurrentSession().createQuery("from User").list();
+		System.out.println(users);
+		return users;
 	}
 
 	@Override
@@ -53,6 +54,7 @@ public class UserDAOImpl implements IUserDAO {
 		System.out.println("我是userDao的实现类");
 		c.add(like);
 		List<User> users = c.list();
+		System.out.println("我是dao里的集合"+users.get(0));
 		return users.get(0);
 	
 	}

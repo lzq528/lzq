@@ -17,19 +17,19 @@
         <property name="upwd" type="string">
             <column name="upwd" length="20" not-null="true" />
         </property>
-        <set name="clazzs" table="clazz" inverse="true" lazy="true" fetch="select">
+        <set name="clazzs" table="clazz" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="uid" />
             </key>
             <one-to-many class="com.woniu.pojo.Clazz" />
         </set>
-        <set name="students" table="student" inverse="true" lazy="true" fetch="select">
+        <set name="students" table="student" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="uid" not-null="true" />
             </key>
             <one-to-many class="com.woniu.pojo.Student" />
         </set>
-        <set name="phases" table="phase" inverse="true" lazy="true" fetch="select">
+        <set name="phases" table="phase" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="uid" />
             </key>

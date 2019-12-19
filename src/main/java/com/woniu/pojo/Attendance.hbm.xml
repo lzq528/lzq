@@ -11,13 +11,13 @@
         <property name="astatus" type="string">
             <column name="astatus" length="20" not-null="true" />
         </property>
-        <set name="students" table="student" inverse="true" lazy="true" fetch="select">
+        <set name="students" table="student" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="aid" not-null="true" />
             </key>
             <one-to-many class="com.woniu.pojo.Student" />
         </set>
-        <set name="clazzs" table="clazz" inverse="true" lazy="true" fetch="select">
+        <set name="clazzs" table="clazz" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="aid" not-null="true" />
             </key>

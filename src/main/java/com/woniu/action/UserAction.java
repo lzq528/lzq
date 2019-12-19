@@ -39,10 +39,11 @@ public class UserAction {
 		return "UserAction [us=" + us + ", users=" + users + ", user=" + user + "]";
 	}
 	
-
 	//登录
 		public String login() {
+			System.out.println(user);
 			User u = us.findByUname(user);
+			System.out.println("查询到的user"+u);
 			if (u!=null&&user.getUpwd().equals(u.getUpwd())) {
 				return "success";
 			}
@@ -52,6 +53,7 @@ public class UserAction {
 		public String findAll(){
 			System.out.println("恭喜你进来了findAll的Action方法");
 			users = us.findAll();
+			System.out.println(users);
 			return "success";
 		
 		}

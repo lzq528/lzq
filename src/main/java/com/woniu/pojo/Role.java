@@ -11,7 +11,7 @@ public class Role implements java.io.Serializable {
 
 	private Integer rid;
 	private String rname;
-	private Set<User> users = new HashSet<User>(0);
+	private Set<User> users = new HashSet<User>();
 
 	public Role() {
 	}
@@ -20,7 +20,7 @@ public class Role implements java.io.Serializable {
 		this.rname = rname;
 	}
 
-	public Role(String rname, Set users) {
+	public Role(String rname, Set<User> users) {
 		this.rname = rname;
 		this.users = users;
 	}
@@ -41,11 +41,11 @@ public class Role implements java.io.Serializable {
 		this.rname = rname;
 	}
 
-	public Set getUsers() {
+	public Set<User> getUsers() {
 		return this.users;
 	}
 
-	public void setUsers(Set users) {
+	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
 

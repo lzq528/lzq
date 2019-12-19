@@ -13,7 +13,7 @@
 		<td>用户姓名</td>
 		<td>用户密码</td>
 	</tr>
-	<s:forEach items="users" var="user">
+	<s:forEach items="${users}" var="user">
 	<tr>
 		<td>${user.uid }</td>
 		<td>${user.uname }</td>

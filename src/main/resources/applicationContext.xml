@@ -26,7 +26,8 @@
 				<prop key="dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 			</props>
 		</property>
-		<property name="mappingLocations" value="classpath:com/woniu/pojo/User.hbm.xml"></property>
+		<property name="mappingLocations" value="classpath*:com/woniu/pojo/*.hbm.xml" ></property>
+		
 	</bean>
 	<!-- 声明事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">

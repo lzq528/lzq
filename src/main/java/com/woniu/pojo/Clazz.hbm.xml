@@ -17,19 +17,19 @@
         <property name="cname" type="string">
             <column name="cname" length="20" not-null="true" />
         </property>
-        <set name="students" table="student" inverse="true" lazy="true" fetch="select">
+        <set name="students" table="student" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="cid" not-null="true" />
             </key>
             <one-to-many class="com.woniu.pojo.Student" />
         </set>
-        <set name="weeks" table="week" inverse="true" lazy="true" fetch="select">
+        <set name="weeks" table="week" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="cid" />
             </key>
             <one-to-many class="com.woniu.pojo.Week" />
         </set>
-        <set name="phases" table="phase" inverse="true" lazy="true" fetch="select">
+        <set name="phases" table="phase" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="cid" />
             </key>

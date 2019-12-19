@@ -90,4 +90,10 @@ public class User implements java.io.Serializable {
 		this.phases = phases;
 	}
 
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", role=" + role + ", uname=" + uname + ", upwd=" + upwd + ", clazzs=" + clazzs
+				+ ", students=" + students + ", phases=" + phases + "]";
+	}
+
 }
